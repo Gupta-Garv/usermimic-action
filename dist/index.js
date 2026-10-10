@@ -3,7 +3,7 @@
  * UserMimic Official GitHub Action Runner
  * Autonomous Multimodal Vision Swarm for Continuous Regression Testing
  *
- * Copyright (c) 2024-2026 UserMimic Technologies
+ * Copyright (c) 2025-2026 UserMimic Technologies
  * SPDX-License-Identifier: Apache-2.0
  */
 const fs = require("fs");
