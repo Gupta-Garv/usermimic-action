@@ -1,0 +1,53 @@
+name: 'UserMimic Autonomous Vision QA'
+description: 'Deploy multimodal computer-vision agents to stress-test web applications, catch visual regressions, and eliminate selector debt in CI/CD.'
+author: 'UserMimic Technologies'
+branding:
+  icon: 'eye'
+  color: 'yellow'
+
+inputs:
+  api-key:
+    description: 'UserMimic workspace API token'
+    required: true
+  project-id:
+    description: 'UserMimic project or application UUID'
+    required: true
+  base-url:
+    description: 'Target preview deployment URL or staging environment'
+    required: true
+  personas:
+    description: 'Comma-delimited list of autonomous personas (e.g. Elena,Marcus,Chloe,Kai)'
+    required: false
+    default: 'Elena,Marcus,Kai'
+  chaos-level:
+    description: 'Autonomous exploration chaos coefficient (0 to 100)'
+    required: false
+    default: '65'
+  fail-on-regression:
+    description: 'Whether to fail the CI step if high-severity visual blockers are detected'
+    required: false
+    default: 'true'
+  export-video:
+    description: 'Generate and export full WebM session video recordings'
+    required: false
+    default: 'true'
+  export-playwright:
+    description: 'Generate reproducible Playwright test scripts from recorded failures'
+    required: false
+    default: 'true'
+
+outputs:
+  status:
+    description: 'Final execution status: passed | failed | flagged'
+  runs-executed:
+    description: 'Total number of autonomous user navigation journeys executed'
+  regressions-count:
+    description: 'Total number of visual defects or layout blockers detected'
+  report-url:
+    description: 'Direct URL to UserMimic interactive trace and visual playback dashboard'
+  summary-markdown:
+    description: 'Formatted markdown summary of test findings'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

@@ -1,0 +1,34 @@
+{
+  "name": "@usermimic/action",
+  "version": "1.2.4",
+  "description": "Official GitHub Action for UserMimic: Multimodal computer-vision agents for continuous end-to-end regression testing.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gupta-Garv/usermimic-action.git"
+  },
+  "keywords": [
+    "actions",
+    "github-action",
+    "ai",
+    "testing",
+    "computer-vision",
+    "e2e",
+    "regression-testing",
+    "qa",
+    "playwright",
+    "cypress",
+    "usermimic",
+    "multimodal-ai"
+  ],
+  "author": "UserMimic Technologies",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Gupta-Garv/usermimic-action/issues"
+  },
+  "homepage": "https://usermimic.tech"
+}

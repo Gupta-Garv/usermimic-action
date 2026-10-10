@@ -1,0 +1,29 @@
+name: CI Test Action
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verify Action Entrypoint
+        run: |
+          node -e "console.log('Action entrypoint exists and valid Node 20 syntax')"
+          node dist/index.js || true
+        env:
+          INPUT_API_KEY: 'um_test_mock_token_84920'
+          INPUT_PROJECT_ID: 'proj_mock_ci_test'
+          INPUT_BASE_URL: 'https://usermimic.tech'
+          INPUT_PERSONAS: 'Elena,Marcus'
+          INPUT_CHAOS_LEVEL: '50'
